@@ -1,0 +1,111 @@
+#page-landing {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primary);
+  user-select: none;
+}
+
+#page-landing-content {
+  max-width: 1100px;
+
+  display: grid;
+  grid-template-rows: 350px 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-areas:
+    "logo hero hero"
+    "buttons buttons credits"
+  ;
+
+  color: var(--white);
+  font-family: 'Roboto', sans-serif;
+}
+
+.caption {
+  grid-area: logo;
+  align-self: center;
+  text-align: initial;
+}
+
+.caption h2 {
+  font-size: 8.6rem;
+  line-height: 10rem;
+  font-weight: 700;
+}
+
+.caption h3 {
+  margin-top: 2rem;
+  font-size: 2rem;
+  opacity: 0.75;
+  font-weight: 400;
+}
+
+.hero-image {
+  width: 100%;
+  grid-area: hero;
+  justify-self: end;
+}
+
+.buttons-container {
+  display: flex;
+  margin: 3.2rem 0;
+  grid-area: buttons;
+  justify-content: flex-start;
+}
+
+.buttons-container a {
+  width: 20rem;
+  height: 8rem;
+  border-radius: 0.8rem;
+  font: 700 1.8rem 'Roboto';
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: var(--white);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.buttons-container a.car-list {
+  background: var(--secondary-lighter);
+}
+
+.buttons-container a.car-list:hover {
+  background: var(--secondary-light);
+}
+
+.buttons-container a.car-register {
+  margin-left: 4rem;
+  background: var(--yellow-strong);
+}
+
+.buttons-container a.car-register:hover{
+  background: var(--yellow);
+}
+
+.credits{
+  margin-top: 8rem;
+  grid-area: credits;
+  justify-self: end;
+}
+
+.credits p {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  opacity: 0.75;
+}
+
+.credits p i {
+  color: var(--secondary);
+}
+
+.credits p a{
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--white);
+}
