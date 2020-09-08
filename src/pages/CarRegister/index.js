@@ -4,11 +4,13 @@ import { useState } from 'react';
 import defaultImage from '../../assets/images/default-image.png';
 
 import './styles.css';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 function CarRegister() {
 
   const cars = JSON.parse(localStorage.getItem('cars')) || [];
+
+  const history = useHistory();
 
   const [imgSource, setImageSource] = useState('');
   const [model, setModel] = useState('');
@@ -20,7 +22,7 @@ function CarRegister() {
   function handlePlacaChange(e) {
     if (e.target.value.length === 3) 
       e.target.value += '-';
-    if (e.target.value.length === 8) 
+    if (e.target.value.length >= 7)
       setPlate(e.target.value);
   }
 
@@ -39,8 +41,8 @@ function CarRegister() {
     $messageDiv.classList.remove('hidden');
     setTimeout(() => {
       $messageDiv.classList.add('hidden');
-      return <Redirect to="/" />;
-    }, 3000);
+      history.replace('/');
+    }, 2000);
     
   }
 
@@ -87,11 +89,11 @@ function CarRegister() {
                 <input 
                   id="placa" 
                   type="text" 
-                  onKeyPress={handlePlacaChange} 
+                  onKeyUp={handlePlacaChange} 
                   placeholder="XXX-XXXX"
                   required
-                  maxLength="8"
                   minLength="8"
+                  maxLength="8"
                 />
               </div>
 

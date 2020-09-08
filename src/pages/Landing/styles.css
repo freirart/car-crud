@@ -62,7 +62,7 @@
   height: 8rem;
   border-radius: 0.8rem;
   font: 700 1.8rem 'Roboto';
-
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
