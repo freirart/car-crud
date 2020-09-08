@@ -7,7 +7,7 @@ import './styles.css';
 
 function CarList() {
   
-  const cars = JSON.parse(localStorage.getItem('cars'));
+  const cars = JSON.parse(localStorage.getItem('cars')) || [];
   
   return (
     <div id="car-list-page">
@@ -17,9 +17,8 @@ function CarList() {
           <h2>Carros cadastrados</h2>
         </header>
         <main>
-          {
-            cars.map((car, index) => <CarItem key={index} obj={car} />)
-          }
+          {cars.length < 1 && alert("Nenhum carro cadastrado.")}
+          {cars.map((car, index) => <CarItem key={index} obj={car} />)}
         </main>
       </div>
     </div>
