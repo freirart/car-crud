@@ -6,7 +6,7 @@
 
 </h1>
 
-- 🐱‍👤 Fernando Daciuk's Ninja Javascript Course - Final Project (CRUD)
+- Final Project of 🐱‍👤 Fernando Daciuk's Ninja Javascript Course (`https://www.udemy.com/course/curso-javascript-ninja/`)
 
 ## Is there anything you want to share? Leave a PR!
 
