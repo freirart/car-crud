@@ -6,7 +6,7 @@
 
 </h1>
 
-- 🐱‍👤 Fernando Daciuk's Ninja Javascript Course - Exercise 29 (Displayig JSON content in DOM).
+- 🐱‍👤 Fernando Daciuk's Ninja Javascript Course - Exercise 29 (Displaying JSON content in DOM).
 
 ## Have anything to share? Leave a PR!
 
