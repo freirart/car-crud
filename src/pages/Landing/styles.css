@@ -35,6 +35,7 @@
   font-size: 8.6rem;
   line-height: 10rem;
   font-weight: 700;
+  animation: up 0.3s;
 }
 
 .caption h3 {
@@ -42,12 +43,14 @@
   font-size: 2rem;
   opacity: 0.75;
   font-weight: 400;
+  animation: up 0.5s backwards;
 }
 
 .hero-image {
   width: 100%;
   grid-area: hero;
   justify-self: end;
+  animation: up 1s backwards;
 }
 
 .buttons-container {
@@ -55,6 +58,7 @@
   margin: 3.2rem 0;
   grid-area: buttons;
   justify-content: flex-start;
+  animation: up 1s;
 }
 
 .buttons-container a {
@@ -92,6 +96,7 @@
   margin-top: 8rem;
   grid-area: credits;
   justify-self: end;
+  animation: up 1s;
 }
 
 .credits p {

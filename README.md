@@ -8,7 +8,7 @@
 
 - 🐱‍👤 Fernando Daciuk's Ninja Javascript Course - Exercise 29 (Displaying JSON content in DOM).
 
-## Have anything to share? Leave a PR!
+## Is there anything you want to share? Leave a PR!
 
 `>git clone https://github.com/freirart/car-crud.git`
 

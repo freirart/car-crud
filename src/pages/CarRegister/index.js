@@ -42,8 +42,7 @@ function CarRegister() {
     setTimeout(() => {
       $messageDiv.classList.add('hidden');
       history.replace('/');
-    }, 2000);
-    
+    }, 2000); 
   }
 
   return (
