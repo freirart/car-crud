@@ -2,11 +2,11 @@
 
 🚘 Car CRUD 🚗
 
-![This is a alt text.](https://raw.githubusercontent.com/freirart/car-crud/master/car-crud-preview.gif "This is a sample image.")
+![Project Preview.](https://raw.githubusercontent.com/freirart/car-crud/master/car-crud-preview.gif "Project Preview.")
 
 </h1>
 
-- 🐱‍👤 Fernando Daciuk's Ninja Javascript Course - Exercise 29
+- 🐱‍👤 Fernando Daciuk's Ninja Javascript Course - Exercise 29 (Displayig JSON content in DOM).
 
 ## Have anything to share? Leave a PR!
 
@@ -25,21 +25,21 @@
 
 ## To Do's
 
-[  ] Nice warning when accessing 'car list' with no registered cars.
+[   ] Nice warning when accessing 'car list' with no registered cars.
 
-[  ] Nice headers in both pages.
+[   ] Nice headers in both pages.
 
-[  ] Entrance animations in all pages.
+[   ] Entrance animations in all pages.
 
-[  ] Make 'car list' page prettier.
+[   ] Make 'car list' page prettier.
 
-[  ] Fix 'Car register' border changes div length.
+[   ] Fix 'Car register' border changes div length.
 
-[  ] Remove cars button.
+[   ] Remove cars button.
 
-[  ] Modal open when clicking in the car div.
+[   ] Modal open when clicking in the car div.
 
-[  ] Being able to edit and store data on modal open.
+[   ] Being able to edit and store data on modal open.
 
 ## Features
 
