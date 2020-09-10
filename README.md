@@ -45,7 +45,7 @@
 
 - Image upload and crop with HTML Canvas and JS (`https://www.youtube.com/watch?v=-RWPvVcYAC4`)
 
-- Store data in NodeJS Local Server
+- Store data in NodeJS Local Server, Deploy it on Heroku
 
 ## Credits
 
