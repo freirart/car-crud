@@ -2,7 +2,7 @@
 
 🚘 Car CRUD 🚗
 
-![Project Preview.](https://raw.githubusercontent.com/freirart/car-crud/master/car-crud-preview.gif "Project Preview.")
+![Project Preview.](https://raw.githubusercontent.com/freirart/car-crud/master/car-crud-preview-gif.gif "Project Preview.")
 
 </h1>
 
@@ -27,13 +27,11 @@
 
 [   ] Nice warning when accessing 'car list' with no registered cars.
 
-[   ] Nice headers in both pages.
-
 [   ] Entrance animations in all pages.
 
 [   ] Make 'car list' page prettier.
 
-[   ] Fix 'Car register' border changes div length.
+[ ✔ ] Fix 'Car register' border changes div length.
 
 [   ] Remove cars button.
 
@@ -45,7 +43,7 @@
 
 - Image upload and crop with HTML Canvas and JS (`https://www.youtube.com/watch?v=-RWPvVcYAC4`)
 
-- JSON Web Server in Heroku
+- Store data in NodeJS Local Server
 
 ## Credits
 
