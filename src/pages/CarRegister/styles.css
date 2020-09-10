@@ -56,7 +56,7 @@ form .input-block label, form .input-block input{
 }
 
 form .input-block input{
-  border: 0;
+  border: 1px solid transparent;
   background: var(--gray-light);
   font-size: 1.4rem;
   padding: 0.8rem;
