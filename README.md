@@ -14,6 +14,8 @@
 
 `>cd car-crud`
 
+`>yarn install`
+
 `>yarn start`
 
 ## Technologies
