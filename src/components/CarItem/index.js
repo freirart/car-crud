@@ -11,27 +11,12 @@ function CarItem({obj, ...rest}) {
   const headerText = `${brand} ${model} (${year})`;
   const [modalIsOpen,setIsOpen] = useState(false);
 
-  let carIndex = 'oi';
-  const cars = JSON.parse(localStorage.getItem('cars'));
-
   function handleCarClick(e) {
     toggleModalOpen();
-    carIndex = e.currentTarget.parentNode.parentNode.parentNode.getAttribute('indice');
   }
 
   function toggleModalOpen() {
     setIsOpen(!modalIsOpen);
-  }
-
-  function handleConfirm() {
-    console.log({ brand, model, year, plate, color, imgSource });
-    // carIndex = cars.indexOf(cars.filter(car => car.plate === plate)[0]);
-    // cars[carIndex] = obj;
-    toggleModalOpen();
-  }
-
-  function handleCancel() {
-    toggleModalOpen();
   }
 
   return (
@@ -64,17 +49,9 @@ function CarItem({obj, ...rest}) {
           title="Atualizar dados do veículo"
           submitType="Confirmar"
           fieldsValue={obj}
-        >
-          <div className="btn-group">
-            <button type="button" onClick={handleConfirm} className="pseudo-submit">
-              Confirmar
-            </button>
-
-            <button type="button" onClick={handleCancel} className="cancel">
-              Cancelar
-            </button>
-          </div>
-        </Form>
+          carIndex=""
+          className="form-control"
+        />
       </Modal>
     </div>
 

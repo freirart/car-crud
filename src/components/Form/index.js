@@ -5,7 +5,7 @@ import defaultImage from '../../assets/images/default-image.png';
 
 import './styles.css';
 
-function Form({displayReversed, title, submitType, fieldsValue, children}) {
+function Form({displayReversed, title, submitType, fieldsValue, carIndex}) {
 
   if (!title) title = 'Cadastrar um novo veículo';
 
@@ -13,24 +13,12 @@ function Form({displayReversed, title, submitType, fieldsValue, children}) {
 
   const history = useHistory();
 
-  const [imgSource, setImageSource] = useState(
-    fieldsValue ? fieldsValue.imgSource : ''
-  );
-  const [model, setModel] = useState(
-    fieldsValue ? fieldsValue.model : ''
-  );
-  const [brand, setBrand] = useState(
-    fieldsValue ? fieldsValue.brand : ''
-  );
-  const [year, setYear] = useState(
-    fieldsValue ? fieldsValue.year : ''
-  );
-  const [plate, setPlate] = useState(
-    fieldsValue ? fieldsValue.plate : ''
-  );
-  const [color, setColor] = useState(
-    fieldsValue ? fieldsValue.color : '#fbc968'
-  );
+  const [imgSource, setImageSource] = useState(fieldsValue?.imgSource);
+  const [model, setModel] = useState(fieldsValue?.model);
+  const [brand, setBrand] = useState(fieldsValue?.brand);
+  const [year, setYear] = useState(fieldsValue?.year);
+  const [plate, setPlate] = useState(fieldsValue?.plate);
+  const [color, setColor] = useState(fieldsValue?.color || '#fbc968');
 
   function handlePlacaChange(e) {
     if (e.target.value.length === 3) 
@@ -53,177 +41,114 @@ function Form({displayReversed, title, submitType, fieldsValue, children}) {
     }, 2000); 
   }
 
+  
+  function handleConfirm() {
+    const carIndex = cars.indexOf(cars.filter(car => car.plate === plate)[0]);
+    cars[carIndex] = { brand, model, year, plate, color, imgSource };
+    localStorage.setItem('cars', JSON.stringify(cars));
+    window.location.reload();
+  }
+
+  function handleCancel() {
+    window.location.reload();
+  }
+
   return(
     <>
-      {!displayReversed && (
-        <div id="car-register-page-content" className="container">
-          <section className="img-section">
-            <img src={imgSource || defaultImage} alt="Car"/>
-          </section>
+      <div id="car-register-page-content" className="container">
+        <section className={`form-section${displayReversed ? ' reversed' : ''}`}>
+          <form onSubmit={handleSubmit}>
+            <h1>{title}</h1>
+            <div className="input-block">
+              <label htmlFor="url">Entre o link da foto do seu veículo</label>
+              <input 
+                id="url" 
+                type="text" 
+                onChange={e => setImageSource(e.target.value)}
+                required
+                value={imgSource}
+              />
+            </div>
 
-          <section className="form-section">
-            <form onSubmit={handleSubmit}>
-              <h1>{title}</h1>
-              <div className="input-block">
-                <label htmlFor="url">Entre o link da foto do seu veículo</label>
+            <div className="input-block">
+              <label htmlFor="modelo">Modelo</label>
+              <input id="modelo" 
+                onChange={e => setModel(e.target.value)} 
+                type="text" 
+                value={model}
+                required
+              />
+            </div>
+
+            <div className="input-group">
+              <div className="input-block w50">
+                <label htmlFor="marca">Marca</label>
                 <input 
-                  id="url" 
+                  id="marca" 
+                  onChange={e => setBrand(e.target.value)} 
                   type="text" 
-                  onChange={e => setImageSource(e.target.value)}
                   required
-                  value={imgSource}
+                  value={brand}
                 />
               </div>
-
-              <div className="input-block">
-                <label htmlFor="modelo">Modelo</label>
-                <input id="modelo" 
-                  onChange={e => setModel(e.target.value)} 
-                  type="text" 
-                  value={model}
-                  required
-                />
-              </div>
-
-              <div className="input-group">
-                <div className="input-block w50">
-                  <label htmlFor="marca">Marca</label>
-                  <input 
-                    id="marca" 
-                    onChange={e => setBrand(e.target.value)} 
-                    type="text" 
-                    required
-                    value={brand}
-                  />
-                </div>
-                <div className="input-block w50">
-                  <label htmlFor="ano">Ano</label>
-                  <input 
-                    id="ano" 
-                    type="text" 
-                    onChange={e => setYear(e.target.value)} 
-                    required
-                    value={year}
-                  />
-                </div>
-              </div>
-
-              <div className="input-group">
-                <div className="input-block w50">
-                  <label htmlFor="placa">Placa</label>
-                  <input 
-                    id="placa" 
-                    type="text" 
-                    onKeyUp={handlePlacaChange} 
-                    onChange={e => setPlate(e.target.value)} 
-                    placeholder="XXX-XXXX"
-                    required
-                    minLength="8"
-                    maxLength="8"
-                    value={plate}
-                  />
-                </div>
-                <div className="input-block w50">
-                  <label htmlFor="cor">Cor</label>
-                  <input id="cor" type="color" onChange={e => setColor(e.target.value)} value={color}/>
-                </div>
-              </div>
-
-              <button type="submit">
-                Cadastrar
-              </button>
-              {}
-            </form>
-
-            <span>Não deseja estar aqui? <Link to="/">Volte à home!</Link></span>
-          </section>
-        </div>
-      )}
-      {displayReversed && (
-        <div id="car-register-page-content" className="container">
-          <section className="form-section">
-            <form onSubmit={handleSubmit}>
-              <h1>{title}</h1>
-              <div className="input-block">
-                <label htmlFor="url">Entre o link da foto do seu veículo</label>
+              <div className="input-block w50">
+                <label htmlFor="ano">Ano</label>
                 <input 
-                  id="url" 
+                  id="ano" 
                   type="text" 
-                  onChange={e => setImageSource(e.target.value)}
+                  onChange={e => setYear(e.target.value)} 
                   required
-                  value={imgSource}
+                  value={year}
                 />
               </div>
+            </div>
 
-              <div className="input-block">
-                <label htmlFor="modelo">Modelo</label>
-                <input id="modelo" 
-                  onChange={e => setModel(e.target.value)} 
+            <div className="input-group">
+              <div className="input-block w50">
+                <label htmlFor="placa">Placa</label>
+                <input 
+                  id="placa" 
                   type="text" 
-                  value={model}
+                  onKeyUp={handlePlacaChange}
+                  onChange={e => setPlate(e.target.value)} 
+                  placeholder="XXX-XXXX"
                   required
+                  minLength="8"
+                  maxLength="8"
+                  value={plate}
+                  disabled={submitType ? true : false}
                 />
               </div>
-
-              <div className="input-group">
-                <div className="input-block w50">
-                  <label htmlFor="marca">Marca</label>
-                  <input 
-                    id="marca" 
-                    onChange={e => setBrand(e.target.value)} 
-                    type="text" 
-                    required
-                    value={brand}
-                  />
-                </div>
-                <div className="input-block w50">
-                  <label htmlFor="ano">Ano</label>
-                  <input 
-                    id="ano" 
-                    type="text" 
-                    onChange={e => setYear(e.target.value)} 
-                    required
-                    value={year}
-                  />
-                </div>
+              <div className="input-block w50">
+                <label htmlFor="cor">Cor</label>
+                <input id="cor" type="color" onChange={e => setColor(e.target.value)} value={color}/>
               </div>
+            </div>
 
-              <div className="input-group">
-                <div className="input-block w50">
-                  <label htmlFor="placa">Placa</label>
-                  <input 
-                    id="placa" 
-                    type="text" 
-                    onKeyUp={handlePlacaChange}
-                    onChange={e => setPlate(e.target.value)} 
-                    placeholder="XXX-XXXX"
-                    required
-                    minLength="8"
-                    maxLength="8"
-                    value={plate}
-                  />
-                </div>
-                <div className="input-block w50">
-                  <label htmlFor="cor">Cor</label>
-                  <input id="cor" type="color" onChange={e => setColor(e.target.value)} value={color}/>
-                </div>
-              </div>
-
-              {!submitType && (
-                <button type="submit">
-                  Cadastrar
+            
+            <button type="submit" className={submitType ? ' hidden': ''}>
+              Cadastrar
+            </button>
+            
+            {submitType && (
+              <div className="btn-group">
+                <button type="button" onClick={handleConfirm} className="pseudo-submit">
+                  Confirmar
                 </button>
-              )}
-              {children}
-            </form>
+    
+                <button type="button" onClick={handleCancel} className="cancel">
+                  Cancelar
+                </button>
+              </div>
+            )}
+          </form>
 
-            <span>Não deseja estar aqui? <Link to="/">Volte à home!</Link></span>
-          </section>
-          <section className="img-section">
-            <img src={imgSource || defaultImage} alt="Car"/>
-          </section>
-        </div>
-      )}
+          <span>Não deseja estar aqui? <Link to="/">Volte à home!</Link></span>
+        </section>
+        <section className={`img-section${displayReversed ? ' reversed' : ''}`}>
+          <img src={imgSource || defaultImage} alt="Car"/>
+        </section>
+      </div>
       <div className="message hidden">
         <i className="fas fa-check" />
         <span>Veículo cadastrado com sucesso!</span>

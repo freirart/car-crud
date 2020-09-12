@@ -42,10 +42,10 @@ header a{
   opacity: 0.75;
   cursor: pointer;
   text-decoration: none;
+  z-index: 1;
 }
 
 main{
-  display: block;
   position: absolute;
   padding-top: 10.5rem;
   margin: 0 auto;
