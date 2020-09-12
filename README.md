@@ -2,7 +2,7 @@
 
 🚘 Car CRUD 🚗
 
-![Project Preview.](https://raw.githubusercontent.com/freirart/car-crud/master/car-crud-preview-gif.gif "Project Preview.")
+![Project Preview.](https://raw.githubusercontent.com/freirart/car-crud/master/car-crud-preview.gif "Project Preview.")
 
 </h1>
 
@@ -37,7 +37,7 @@
 
 [ ✔ ] Modal open when clicking in the car div.
 
-[   ] Being able to edit and store data on modal open.
+[ ✔ ] Being able to edit and store data on modal open.
 
 ## Features
 
