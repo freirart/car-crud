@@ -18,7 +18,7 @@ function CarList() {
         </header>
         <main>
           {cars.length < 1 && alert("Nenhum carro cadastrado.")}
-          {cars.map((car, index) => <CarItem key={index} obj={car} />)}
+          {cars.map((car, index) => <CarItem key={index} indice={index} obj={car} />)}
         </main>
       </div>
     </div>

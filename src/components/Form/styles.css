@@ -1,0 +1,152 @@
+#car-register-page-content{
+  max-width: 1100px;
+  display: flex;
+  animation: up 0.4s;
+}
+
+section{
+  display: fixed;
+  width: 50%;
+  min-height: calc(100% + 2px);
+  max-height: calc(100% + 2px);
+  background: var(--white);
+  padding: 1rem;
+}
+
+img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+form {
+  padding: 2rem;
+  color: var(--black);
+}
+
+form h1{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+  color: var(--secondary);
+}
+
+form .input-block{
+  display: flex;
+  margin-top: 2rem;
+  flex-direction: column;
+}
+
+form .input-block label, form .input-block input{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+}
+
+form .input-block input{
+  border: 1px solid transparent;
+  background: var(--gray-light);
+  font-size: 1.4rem;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+form .input-block input#placa{
+  text-transform: uppercase;
+}
+
+form .input-block input:focus{
+  border: 1px solid var(--secondary);
+}
+
+form .input-group{
+  display: flex;
+  justify-content: space-between;
+}
+
+form .input-block.w50{
+  width: 47%;
+}
+
+form button{
+  width: 12rem;
+  height: 5rem;
+  border-radius: 0.8rem;
+  font: 700 1.6rem 'Roboto';
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  margin-top: 2rem;
+  color: var(--white);
+}
+
+form button[type="submit"], form .btn-group .pseudo-submit {
+  background: var(--secondary-light);
+  margin-right: 2rem;
+}
+
+form button[type="submit"]:hover, form .btn-group .pseudo-submit:hover{
+  background: var(--secondary-lighter);
+}
+
+.btn-group{
+  display: flex;
+}
+
+.btn-group .cancel {
+  background: var(--yellow-strong);
+}
+
+.btn-group .cancel:hover {
+  background: var(--yellow);
+}
+
+
+
+.form-section span{
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  margin: 1.5rem;
+  text-align: center;
+}
+
+.form-section span a{
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.message{
+  width: 40rem;
+  height: 8rem;
+  background: #b8ff7f;
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+  transition: 0.5s;
+}
+
+.message span{
+  font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
+  margin: 2rem;
+}
+
+.message.hidden{
+  right: -1rem;
+  opacity: 0;
+}

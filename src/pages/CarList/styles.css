@@ -29,11 +29,10 @@ header{
 }
 
 header h2{
-  margin-left: 15rem;
+  margin-left: 10%;
 }
 
 header a{
-  z-index: 20;
   right: 0;
   top: 0;
   margin: 4rem;
@@ -50,5 +49,4 @@ main{
   position: absolute;
   padding-top: 10.5rem;
   margin: 0 auto;
-  z-index: 10;
 }

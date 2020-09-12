@@ -1,5 +1,12 @@
 .car-item{
   display: inline-block;
+  position: relative;
+  transition: .3s;
+  animation: up 0.4s;
+}
+
+.car-item:hover, .action i:hover{
+  transform: scale(1.05);
 }
 
 .content{
@@ -46,4 +53,45 @@
   width: 1.5rem;
   border-radius: 50%;
   margin-right: 0.8rem;
+}
+
+.action {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  display: flex;
+}
+
+.action i{
+  font-size: 2rem;
+  transition: .1s;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.action i:first-child{
+  color: var(--gray-dark);
+}
+
+.action i:first-child:hover{
+  color: var(--black);
+}
+
+.action i:last-child{
+  color: var(--secondary);
+}
+
+.action i:last-child:hover{
+  color: var(--secondary-darker);
+}
+
+.modal-wrapper {
+  max-width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  outline: 0;
 }
