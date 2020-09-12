@@ -33,17 +33,23 @@
 
 [ ✔ ] Fix 'Car register' border changes div length.
 
-[   ] Remove cars button and function.
+[   ] Remove cars function.
 
 [ ✔ ] Modal open when clicking in the car div.
 
 [ ✔ ] Being able to edit and store data on modal open.
 
+[   ] Switch 'confirm/cancel' buttons place.
+
+[   ] Change modal overlay color to black.
+
 ## Features
 
 - Image upload and crop with HTML Canvas and JS (`https://www.youtube.com/watch?v=-RWPvVcYAC4`)
 
-- Store data in NodeJS Local Server, Deploy it on Heroku
+- Store data in NodeJS Local Server
+
+- Deploy local server on Heroku
 
 ## Credits
 
