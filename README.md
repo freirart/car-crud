@@ -29,15 +29,13 @@
 
 [   ] Nice warning when accessing 'car list' with no registered cars.
 
-[   ] Entrance animations in all pages.
-
-[   ] Make 'car list' page prettier.
+[ ✔ ] Entrance animations in all pages.
 
 [ ✔ ] Fix 'Car register' border changes div length.
 
-[   ] Remove cars button.
+[   ] Remove cars button and function.
 
-[   ] Modal open when clicking in the car div.
+[ ✔ ] Modal open when clicking in the car div.
 
 [   ] Being able to edit and store data on modal open.
 
