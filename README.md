@@ -22,26 +22,9 @@
 
 * ReactJS
 * React Router DOM
+* React Modal
 * Create React App
 * Local Storage Javascript Object
-
-## To Do's
-
-[   ] Nice warning when accessing 'car list' with no registered cars.
-
-[ ✔ ] Entrance animations in all pages.
-
-[ ✔ ] Fix 'Car register' border changes div length.
-
-[   ] Remove cars function.
-
-[ ✔ ] Modal open when clicking in the car div.
-
-[ ✔ ] Being able to edit and store data on modal open.
-
-[   ] Switch 'confirm/cancel' buttons place.
-
-[   ] Change modal overlay color to black.
 
 ## Features
 
