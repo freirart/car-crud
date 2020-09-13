@@ -30,9 +30,11 @@
 
 - Image upload and crop with HTML Canvas and JS (`https://www.youtube.com/watch?v=-RWPvVcYAC4`)
 
-- Store data in NodeJS Local Server
+- Store data in a NodeJS Local Server
 
-- Deploy local server on Heroku
+- Deploy server on Heroku
+
+- Deploy application on Vercel
 
 ## Credits
 
