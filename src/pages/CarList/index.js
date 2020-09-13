@@ -18,7 +18,7 @@ function CarList() {
         </header>
         <main>
           {cars.length < 1 && (
-            <h1>NENHUM CARRO CADASTRADO.</h1>
+            <h3 className="warning-message">NENHUM CARRO CADASTRADO.</h3>
           )}
           {cars.map((car, index) => <CarItem key={index} indice={index} obj={car} />)}
         </main>

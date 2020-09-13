@@ -50,3 +50,10 @@ main{
   padding-top: 10.5rem;
   margin: 0 auto;
 }
+
+.warning-message {
+  color: var(--primary-dark);
+  font: 600 1.6rem 'Roboto';
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
