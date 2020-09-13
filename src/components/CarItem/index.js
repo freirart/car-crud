@@ -9,10 +9,19 @@ function CarItem({obj, ...rest}) {
   
   const { brand, model, year, plate, color, imgSource } = obj;
   const headerText = `${brand} ${model} (${year})`;
+  
   const [modalIsOpen,setIsOpen] = useState(false);
 
-  function handleCarClick(e) {
-    toggleModalOpen();
+  function handleDelete(e) {
+    const car = e.currentTarget.parentNode.parentNode.parentNode;
+    const carIndex = car.getAttribute('indice');
+    const cars = JSON.parse(localStorage.getItem('cars'));
+    cars.splice(carIndex, 1);
+    localStorage.setItem('cars', JSON.stringify(cars));
+    car.classList.add("hidden");
+    setTimeout(() => {
+      car.classList.add("hidden-absolute");
+    }, 400);
   }
 
   function toggleModalOpen() {
@@ -33,8 +42,8 @@ function CarItem({obj, ...rest}) {
           </small>
         </div>
         <div className="action">
-          <i className="fas fa-edit" onClick={handleCarClick}></i>
-          <i className="fas fa-trash-alt" onClick={handleCarClick}></i>
+          <i className="fas fa-edit" onClick={toggleModalOpen}></i>
+          <i className="fas fa-trash-alt" onClick={handleDelete}></i>
         </div>
       </div>
 
@@ -43,6 +52,14 @@ function CarItem({obj, ...rest}) {
         onRequestClose={toggleModalOpen}
         appElement={document.getElementById('root')}
         className="modal-wrapper"
+        style={
+          {
+            overlay: {
+              backgroundColor: 'rgba(0,0,0,0.3)',
+            }
+          }
+        }
+        closeTimeoutMS={400}
       >
         <Form 
           displayReversed={true} 

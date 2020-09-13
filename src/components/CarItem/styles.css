@@ -5,6 +5,15 @@
   animation: up 0.4s;
 }
 
+.car-item.hidden, .car-item.hidden:hover{
+  transform: scale(0);
+}
+
+.car-item.hidden.hidden-absolute, .car-item.hidden.hidden-absolute:hover{
+  height: 0;
+  width: 0;
+}
+
 .car-item:hover, .action i:hover{
   transform: scale(1.05);
 }

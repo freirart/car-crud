@@ -41,10 +41,9 @@ function Form({displayReversed, title, submitType, fieldsValue, carIndex}) {
     }, 2000); 
   }
 
-  
   function handleConfirm() {
     const carIndex = cars.indexOf(cars.filter(car => car.plate === plate)[0]);
-    cars[carIndex] = { brand, model, year, plate, color, imgSource };
+    cars[carIndex] = { imgSource, model, brand, year, plate, color };
     localStorage.setItem('cars', JSON.stringify(cars));
     window.location.reload();
   }
@@ -131,14 +130,16 @@ function Form({displayReversed, title, submitType, fieldsValue, carIndex}) {
             </button>
             
             {submitType && (
-              <div className="btn-group">
-                <button type="button" onClick={handleConfirm} className="pseudo-submit">
-                  Confirmar
-                </button>
-    
-                <button type="button" onClick={handleCancel} className="cancel">
-                  Cancelar
-                </button>
+              <div className="btn-group-wrapper">
+                <div className="btn-group">
+                  <button type="button" onClick={handleCancel} className="cancel">
+                    Cancelar
+                  </button>
+                  
+                  <button type="button" onClick={handleConfirm} className="pseudo-submit">
+                    Confirmar
+                  </button>
+                </div>
               </div>
             )}
           </form>
