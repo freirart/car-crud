@@ -26,7 +26,7 @@
 * Create React App
 * Local Storage Javascript Object
 
-## Features
+## Next Features
 
 - Image upload and crop with HTML Canvas and JS (`https://www.youtube.com/watch?v=-RWPvVcYAC4`)
 
